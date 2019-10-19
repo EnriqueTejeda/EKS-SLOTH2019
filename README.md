@@ -9,6 +9,7 @@
 * jre runtime (Java) 
 
 ## Docker
+
 ### Crear Fat-Jar de nuestra aplicacion Vert.X
 ```
 mvn package
@@ -80,6 +81,7 @@ kubectl delete --all services --namespace=default
 
 
 ### Resources
+* [ Docker Hub Image ](https://hub.docker.com/r/etejeda/sloth-vertx-demo)
 * [ Amazon EKS Workshop ](https://eksworkshop.com/)
 * [ Amazon EKS ALB Controller ](https://docs.aws.amazon.com/es_es/eks/latest/userguide/alb-ingress.html)
 

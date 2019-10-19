@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: sloth
+spec:
+  selector:
+    matchLabels:
+      app: sloth
+      tier: frontend
+      track: stable
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: sloth
+        tier: frontend
+        track: stable
+    spec:
+      containers:
+      - name: sloth-frontend
+        image: "etejeda/sloth-vertx-demo:0.1.0"
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
+        env:
+        - name: PORT
+          value: "8080" 

@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress
+  namespace: sloth
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+  labels:
+    app: sloth
+spec:
+  rules:
+  - host: sloth2019.enriquetejeda.com
+    http:
+      paths:
+      - backend:
+          serviceName: frontend
+          servicePort: 80
